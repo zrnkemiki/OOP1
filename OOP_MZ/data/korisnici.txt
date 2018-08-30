@@ -1,0 +1,3 @@
+Petar|Petrovic|123123123|user|user|recepcioner|false
+Milanka|Zrnic|987654321|mima|mima|menadzer|true
+Milos|Zrnic|123456123|username|password|menadzer|true

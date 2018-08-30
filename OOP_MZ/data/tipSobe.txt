@@ -1,0 +1,4 @@
+11|mala_soba|1|true
+22|srednja_soba|2|true
+33|velika_soba|3|true
+44|apartman|4|true

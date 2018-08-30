@@ -1,0 +1,4 @@
+skdad|markovic|012345678|false
+Suzana|Suzi|240923|true
+Aleksandar|Suhanov|228878|false
+Milan|Suhanov|080056|true

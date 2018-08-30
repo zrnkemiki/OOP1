@@ -12,7 +12,7 @@ public class Korisnik {
 	
 	public Korisnik() {
 	}
-	
+	//GIT TEST
 	
 	public Korisnik(String ime, String prezime, String brojLK, String korisnickoIme, String lozinka,
 			String tipKorisnika, boolean aktivnost) {

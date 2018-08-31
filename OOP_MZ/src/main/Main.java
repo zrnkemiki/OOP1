@@ -1,15 +1,12 @@
 package main;
 
-import java.io.BufferedReader;
 import java.util.Scanner;
 
 import iostream.GostIO;
-import iostream.IOHandler;
 import iostream.KorisnikIO;
 import iostream.SobaIO;
 import iostream.TipSobeIO;
 import model.DataBase;
-import model.Gost;
 import model.Korisnik;
 
 public class Main {
@@ -89,6 +86,7 @@ public class Main {
 	
 	public static Korisnik logovanje() {
 		Korisnik temp = new Korisnik();
+		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 		
 		String korisnickoIme;

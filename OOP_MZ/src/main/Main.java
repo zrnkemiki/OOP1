@@ -2,10 +2,12 @@ package main;
 
 import java.util.Scanner;
 
+import iostream.CenovnikIO;
 import iostream.GostIO;
 import iostream.KorisnikIO;
 import iostream.SobaIO;
 import iostream.TipSobeIO;
+import model.Cenovnik;
 import model.DataBase;
 import model.Korisnik;
 
@@ -17,6 +19,7 @@ public class Main {
 		GostIO.ucitajGoste();
 		SobaIO.ucitavanjeSoba();
 		TipSobeIO.ucitajTipSobe();
+		CenovnikIO.ucitajCenovnik();
 		
 //		System.out.println("Dobro dosli u dodavanje novog korisnika.");
 //		KorisnikIO.dodavanjeKorisnika();
@@ -35,9 +38,14 @@ public class Main {
 //		TipSobeIO.dodavanjeTipaSobe();
 //		TipSobeIO.azurirajTipSobe();	
 		
-		Korisnik miso = logovanje();
-		System.out.println("________________________________________________");
-		System.out.println(miso.toString());
+//		Korisnik miso = logovanje();
+//		System.out.println("________________________________________________");
+//		System.out.println(miso.toString());
+		
+		System.out.println("Cenovnik");
+//		CenovnikIO.dodavanjeCenovnik();
+		CenovnikIO.brisanjeCenovnika();
+		CenovnikIO.azurirajCenovnik();
 		
 //		System.out.println("Izmena korisnika: ");
 //		KorisnikIO.izmenaKorisnika();

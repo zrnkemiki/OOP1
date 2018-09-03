@@ -10,6 +10,8 @@ public class DataBase {
 	public static HashMap<Integer,Soba> sobe=new HashMap<Integer,Soba>();
 	public static HashMap<Integer, TipSobe> tipSobe = new HashMap<Integer, TipSobe>();
 	
+	public static HashMap<Integer, Cenovnik> cenovnik = new HashMap<Integer, Cenovnik>();
+	
 	
 	
 	

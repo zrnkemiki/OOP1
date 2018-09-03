@@ -146,7 +146,7 @@ public class TipSobeIO {
 			if(DataBase.tipSobe.containsKey(brSobe)) {
 				DataBase.tipSobe.remove(brSobe);
 				System.out.println("Tip Sobe sa brojem" + brSobe + " je uklonjen");
-							
+				break;			
 			}
 			else
 			{

@@ -25,7 +25,16 @@ public class Korisnik {
 		this.tipKorisnika = tipKorisnika;
 		this.aktivnost = aktivnost;
 	}
-
+	
+	public void setNull() {
+		this.ime = null;
+		this.prezime = null; 
+		this.brojLK = null;
+		this.korisnickoIme = null;
+		this.lozinka = null;
+		this.tipKorisnika = null;
+		this.aktivnost = (Boolean) null;
+	}
 
 	public String getIme() {
 		return ime;
@@ -86,6 +95,7 @@ public class Korisnik {
 @Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return ime + "|" + prezime + "|" + brojLK + "|" + korisnickoIme + "|" + lozinka + "|" + this.getTipKorisnika() + "|" + aktivnost;
+		
+		return ime  + "|" + prezime + "|" + brojLK + "|" + korisnickoIme + "|" + lozinka + "|" + this.getTipKorisnika() + "|" + aktivnost;
 	}
 }

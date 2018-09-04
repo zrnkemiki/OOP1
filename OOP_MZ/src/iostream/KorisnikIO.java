@@ -111,7 +111,7 @@ public class KorisnikIO {
 	
 
 	
-	public static void dodavanjeKorisnika() {
+	public static void dodavanjeProdavca() {
 		Korisnik korisnik = new Korisnik();
 		
 		String ime = IOHandler.unosImena();
@@ -119,7 +119,36 @@ public class KorisnikIO {
 		String brojLK = IOHandler.unosBrojLK();
 		String korisnickoIme = IOHandler.unosKorisnickoIme();
 		String lozinka = IOHandler.unosLozinke();
-		String tipKorisnika = IOHandler.unosTipaKorisnika();
+		String tipKorisnika = "recepcioner";
+		boolean aktivnost = IOHandler.unosBoolean();
+		
+		korisnik.setIme(ime);
+		korisnik.setPrezime(prezime);
+		korisnik.setBrojLK(brojLK);
+		korisnik.setKorisnickoIme(korisnickoIme);
+		korisnik.setLozinka(lozinka);
+		korisnik.setTipKorisnika(tipKorisnika);
+		korisnik.setAktivnost(aktivnost);
+		
+		String  id = brojLK;
+	    if(DataBase.korisnici.containsKey(id)){
+	        System.out.println("Korisnik sa brojem licne karte: " + id + " vec postoji.");
+	    } else{
+	    	DataBase.korisnici.put(korisnik.getBrojLK(), korisnik);
+	    	System.out.println("Korisnik dodat."); 									//OBRISATI
+	    }			
+				
+	}
+	
+	public static void dodavanjeMenadzera() {
+		Korisnik korisnik = new Korisnik();
+		
+		String ime = IOHandler.unosImena();
+		String prezime = IOHandler.unosPrezimena();
+		String brojLK = IOHandler.unosBrojLK();
+		String korisnickoIme = IOHandler.unosKorisnickoIme();
+		String lozinka = IOHandler.unosLozinke();
+		String tipKorisnika = "menadzer";
 		boolean aktivnost = IOHandler.unosBoolean();
 		
 		korisnik.setIme(ime);

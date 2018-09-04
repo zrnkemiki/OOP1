@@ -6,7 +6,7 @@ public class IOHandler {
 	static Scanner input = new Scanner(System.in);
 
 	public static String unosBrojLK() {
-		System.out.println("Unesite broj licne karte: ");
+		System.out.println("Unesite broj licne karte, mora sadrzati 9 cifara: ");
 		while (true) {
 			String brojLK = input.nextLine();		
 			if (brojLK == "") {
@@ -87,16 +87,16 @@ public class IOHandler {
 	public static String unosTipaKorisnika() {		
 		System.out.println("Unesite tip korinsika: ");
 		while(true) {
-			System.out.println("Korisnik moze biti menadzer i prodavac.");
+			System.out.println("Korisnik moze biti menadzer i recepcioner.");
 			String tipKorisnika = input.nextLine();
 			if (tipKorisnika.equals("")) {
 				System.out.println("Tip korisnika ne moze biti prazno polje.");
 				continue;
-			}else if(tipKorisnika.toLowerCase().equals("menadzer") || tipKorisnika.toLowerCase().equals("prodavac")) {
+			}else if(tipKorisnika.toLowerCase().equals("menadzer") || tipKorisnika.toLowerCase().equals("recepcioner")) {
 				return tipKorisnika;
 			}else {
 				//System.out.println(tipKorisnika);
-				System.out.println("Korisnik mora biti menadzer ili prodavac.");
+				System.out.println("Korisnik mora biti menadzer ili recepcioner.");
 				
 				
 			}
@@ -105,7 +105,7 @@ public class IOHandler {
 	}
 	
 	public static boolean unosBoolean() {
-		System.out.println("Unesite TRUE ili FALSE vrednost.");
+		System.out.println("Unesite aktivnost korisnika primenom true ili false vrednost.");
 		while(true) {
 			String aktivnostTemp = input.nextLine();
 			boolean aktivnost;

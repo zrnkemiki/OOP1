@@ -1,4 +1,4 @@
-Aleksandar|Suhanov|222222222|false
+Aleksandar|Aleks|123456789|false
 Suzana|Suzi|111111111|true
-Milan|Suhanov|333333333|true
-Marko|Marko|000000000|true
+Milan|Milovanovic|333333333|true
+Marko|Marko|123228878|true

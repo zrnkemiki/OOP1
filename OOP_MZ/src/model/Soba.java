@@ -62,6 +62,6 @@ public class Soba {
 
 	@Override
 	public String toString() {
-		return brSobe + "|" + tipSobeID + "|" + tv + "|" + miniBar + "|"  + aktivnost;
+		return brSobe + "|" + tipSobeID + "|" + tv + "" + miniBar + "|"  + aktivnost;
 	}
 }

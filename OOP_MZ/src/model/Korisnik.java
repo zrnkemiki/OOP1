@@ -12,11 +12,7 @@ public class Korisnik {
 	
 	public Korisnik() {
 	}
-<<<<<<< HEAD
-	//GIT TEST
-=======
-	//git test
->>>>>>> master
+
 	
 	public Korisnik(String ime, String prezime, String brojLK, String korisnickoIme, String lozinka,
 			String tipKorisnika, boolean aktivnost) {
@@ -100,6 +96,6 @@ public class Korisnik {
 	public String toString() {
 		// TODO Auto-generated method stub
 		
-		return ime  + "|" + prezime + "|" + brojLK + "|" + korisnickoIme + "|" + lozinka + "|" + this.getTipKorisnika() + "|" + aktivnost;
+		return ime  + "|"  + prezime + "|" + brojLK + "|" + korisnickoIme + "|" + lozinka + "|" + this.getTipKorisnika() + "|" + aktivnost;
 	}
 }

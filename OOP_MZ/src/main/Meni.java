@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import iostream.CenovnikIO;
 import iostream.IOHandler;
+import iostream.IznajmljivanjeIO;
 import iostream.KorisnikIO;
 import iostream.Pregledi;
 import iostream.SobaIO;
@@ -13,17 +14,16 @@ import model.Korisnik;
 
 public class Meni {
 	static String tipKorisnika = "";
-	static Korisnik korisnik = new Korisnik();
-	
+	// static Korisnik korisnik = new Korisnik();
+
 	public static void start() {
+		Korisnik korisnik = new Korisnik();
 		korisnik = logovanje();
-		while(true)
+		while (true)
 			korisnickiMeni(korisnik);
 
-		
 	}
-	
-	
+
 	public static void korisnickiMeni(Korisnik korisnik) {
 		int input;
 		if (korisnik.getTipKorisnika().equals("admin")) {
@@ -40,13 +40,19 @@ public class Meni {
 				System.out.println("1) Sortiranje korisnika po imenu");
 				System.out.println("2) Sortiranje korisnika po prezimenu");
 				System.out.println("3) Sortiranje korisnika po korisnickom imenu");
+				System.out.println("4) Pretraga korisnika po imenu");
+				System.out.println("5) Pretraga korisnika po prezimenu");
+				System.out.println("6) Pretraga korisnika po korisnickom imenu");				
 				System.out.println("0) Izlazak iz programa");
-				input = izaberiMeniOpciju(4, true);
+				input = izaberiMeniOpciju(7, true);
 				if(input == 1) Pregledi.sortiranjeKorisnikaIme();
 				else if(input == 2) Pregledi.sortiranjeKorisnikaPrezime();
 				else if (input == 3) Pregledi.sortiranjeKorisnikaKorisnickoIme();
+				else if(input == 4) Pregledi.pretragaKorisnikaIme();
+				else if (input == 5) Pregledi.pretragaKorisnikaPrezime();
+				else if(input == 6) Pregledi.pretragaKorisnikaKorisnickoIme();
 				else if(input == 0) {System.out.println("Dovidjenja!\n");
-				System.exit(1);}
+				korisnik = null; start();;}
 				break;
 			case 2:
 				KorisnikIO.dodavanjeMenadzera();
@@ -62,11 +68,12 @@ public class Meni {
 				break;
 			case 0:
 				System.out.println("Uspesno ste se izlogovali. \n");
-				korisnickiMeni(korisnik);
+				korisnik = null; start();;
 				break;
 			}
 
 		}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
 		else if (korisnik.getTipKorisnika().equals("menadzer")) {
 			System.out.println("-------------------------------------\n");
 			System.out.println("1) Rad sa korisnicima.");
@@ -96,7 +103,7 @@ public class Meni {
 					else if(input == 2) Pregledi.sortiranjeKorisnikaPrezime();
 					else if (input == 3) Pregledi.sortiranjeKorisnikaKorisnickoIme();
 					else if(input == 0) {System.out.println("Uspesno ste se izlogovali. \n");
-					korisnickiMeni(korisnik);}
+					korisnik = null; start();}
 					break;
 				case 2:
 					KorisnikIO.dodavanjeMenadzera();
@@ -116,7 +123,8 @@ public class Meni {
 					break;
 				case 0:
 					System.out.println("Uspesno ste se izlogovali. \n");
-					korisnickiMeni(korisnik);
+					korisnik = null; 
+					start();
 					break;
 				}
 			}
@@ -135,14 +143,20 @@ public class Meni {
 				switch (input) {
 				case 1:
 					System.out.println("-------------------------------------\n");
-					System.out.println("1) Sortiranje soba po imenu");
+					System.out.println("1) Sortiranje soba po broju");
 					System.out.println("2) Sortiranje po broju krevetau");
+					System.out.println("3) Pretraga soba po broju");
+					System.out.println("4) Pretraga soba po TV");
+					System.out.println("5) Pretraga soba po MINIbar");
 					System.out.println("0) Izlazak iz programa");
-					input = izaberiMeniOpciju(3, true);
+					input = izaberiMeniOpciju(6, true);
 					if(input == 1) Pregledi.sortiranjeSobeBroj();
 					else if(input == 2) Pregledi.sortiranjeSobeTip();
+					else if(input == 3) Pregledi.pretragaSobeBroj();
+					else if(input == 4) Pregledi.pretragaSobaTV();
+					else if(input == 5) Pregledi.pretragaSobaMiniBar();
 					else if(input == 0) {System.out.println("Uspesno ste se izlogovali. \n");
-					korisnickiMeni(korisnik);}
+					korisnik = null; start();;}
 					break;
 				case 2:
 					SobaIO.dodavanjeSoba();
@@ -158,14 +172,14 @@ public class Meni {
 					break;
 				case 5:
 					System.out.println("-------------------------------------\n");
-					System.out.println("1) Sortiranje soba po imenu");
-					System.out.println("2) Sortiranje po broju krevetau");
+					System.out.println("1) Sortiranje tipa soba po imenu");
+					System.out.println("2) Sortiranje tipa soba po broju krevetau");
 					System.out.println("0) Izlazak iz programa");
 					input = izaberiMeniOpciju(3, true);
 					if(input == 1) Pregledi.sortiranjeTipSobeIme();
 					else if(input == 2) Pregledi.sortiranjeTipSobeBrojKreveta();
 					else if(input == 0) {System.out.println("Uspesno ste se izlogovali. \n");
-					korisnickiMeni(korisnik);}
+					korisnik = null; start();;}
 					break;
 				case 6:
 					TipSobeIO.dodavanjeTipaSobe();
@@ -181,44 +195,51 @@ public class Meni {
 					break;	
 				case 0:
 					System.out.println("Uspesno ste se izlogovali. \n");
-					korisnickiMeni(korisnik);
+					korisnik = null; start();;
 					break;
 					}
 				}
-				else if(input == 3) {
-					System.out.println("-------------------------------------\n");
-					System.out.println("1) Pregled cenovnika.");
-					System.out.println("2) Kreiranje stavke cenovnika");
-					System.out.println("3) Brisanje stavke cenovnika");
-					System.out.println("4) Izmena stavke cenovnika");
-					System.out.println("0) Odjavljivanje.");
-					input = izaberiMeniOpciju(5, true);
-					switch (input) {
-					case 1:
-						System.out.println("Uraditi pregled cenovnika");
-						//Pregled soba
-						break;
-					case 2:
-						CenovnikIO.dodavanjeCenovnik();
-						CenovnikIO.azurirajCenovnik();
-						break;
-					case 3:
-						CenovnikIO.brisanjeCenovnika();
-						CenovnikIO.azurirajCenovnik();
-						break;
-					case 4:
-						CenovnikIO.izmenaCenovnika();
-						CenovnikIO.azurirajCenovnik();
-						break;
-					case 0:
-						System.out.println("Uspesno ste se izlogovali. \n");
-						korisnickiMeni(korisnik);
-						break;
-					}	
-				}						
+			else if(input == 3) {
+				System.out.println("-------------------------------------\n");
+				System.out.println("1) Pregled cenovnika.");
+				System.out.println("2) Kreiranje stavke cenovnika");
+				System.out.println("3) Brisanje stavke cenovnika");
+				System.out.println("4) Izmena stavke cenovnika");
+				System.out.println("0) Odjavljivanje.");
+				input = izaberiMeniOpciju(5, true);
+				switch (input) {
+				case 1:
+					System.out.println("Uraditi pregled cenovnika");
+					//Pregled soba
+					break;
+				case 2:
+					CenovnikIO.dodavanjeCenovnik();
+					CenovnikIO.azurirajCenovnik();
+					break;
+				case 3:
+					CenovnikIO.brisanjeCenovnika();
+					CenovnikIO.azurirajCenovnik();
+					break;
+				case 4:
+					CenovnikIO.izmenaCenovnika();
+					CenovnikIO.azurirajCenovnik();
+					break;
+				case 0:
+					System.out.println("Uspesno ste se izlogovali. \n");
+					korisnik = null; 
+					start();
+					break;
+				}
+			}
+			else if(input == 0) {
+				System.out.println("Uspesno ste se izlogovali. \n");
+				korisnik = null; 
+				start();
+				}
 		}
+										
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
 		else if (korisnik.getTipKorisnika().equals("recepcioner")) {
-			System.out.println("meni recepcionera");
 			System.out.println("-------------------------------------\n");
 			System.out.println("1) Izdavanje sobe");
 			System.out.println("2) Izdavanje racuna");
@@ -226,21 +247,21 @@ public class Meni {
 			input = izaberiMeniOpciju(3, true);
 			switch (input) {
 			case 1:
-				System.out.println("Uraditi izdavanje sobe");
-				//Pregled menadzera
+				IznajmljivanjeIO.dodajIznajmljivanje(korisnik);
+				IznajmljivanjeIO.azurirajIznajmljivanja();
 				break;
 			case 2:
-				System.out.println("Uraditi racuna");
+				System.out.println("U izradi.");
 				//Pregled menadzera
 				break;
 			case 0:
 				System.out.println("Uspesno ste se izlogovali. \n");
-				korisnickiMeni(korisnik);
+				korisnik = null; start();;
 				break;
 			}	
 		}
 	}
-	
+
 	public static int izaberiMeniOpciju(int range, boolean saNulom) {
 		int izbor = -1;
 		int unetiBroj;
@@ -270,37 +291,35 @@ public class Meni {
 		return izbor;
 	}
 
-	
-	
 	public static Korisnik logovanje() {
-		
+
 		Korisnik temp = new Korisnik();
 		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
-		
+
 		String korisnickoIme;
 		String lozinka;
 		boolean aktivan;
-		
-		while(true) {
+
+		while (true) {
 			aktivan = true;
-			System.out.println("Unesite korisnicko ime");
+			System.out.println("\n**DOBRO DOSLI U MOTEL OOP1**");
+			System.out.println(" Unesite korisnicko ime:");
 			korisnickoIme = input.nextLine();
 			if (korisnickoIme == "") {
 				System.out.println("Korisnicko ime ne moze biti prazno polje.");
 				continue;
 			}
-			System.out.println("unesite lozinku");
+			System.out.println("unesite lozinku:");
 			lozinka = input.nextLine();
-			
+
 			if (lozinka == "") {
 				System.out.println("Lozinka ne moze biti prazno polje.");
 				continue;
 			}
-			
-			
-			//__________________ADMIN LOGIN____________
-			if(korisnickoIme.equals("admin") && lozinka.equals("admin")) {
+
+			// __________________ADMIN LOGIN____________
+			if (korisnickoIme.equals("admin") && lozinka.equals("admin")) {
 				System.out.println("Uspesno ste se ulogovali kao administrator.");
 				temp.setIme("admin");
 				temp.setPrezime("admin");
@@ -312,33 +331,33 @@ public class Meni {
 				aktivan = false;
 				return temp;
 			}
-			//______________USERS LoGIN___________________
-			for(String key : DataBase.korisnici.keySet()) {
-				if(DataBase.korisnici.get(key).getKorisnickoIme().equals(korisnickoIme) && DataBase.korisnici.get(key).getLozinka().equals(lozinka)) {
-					if(!DataBase.korisnici.get(key).isAktivnost()) {
+			// ______________USERS LoGIN___________________
+			for (String key : DataBase.korisnici.keySet()) {
+				if (DataBase.korisnici.get(key).getKorisnickoIme().equals(korisnickoIme)
+						&& DataBase.korisnici.get(key).getLozinka().equals(lozinka)) {
+					if (!DataBase.korisnici.get(key).isAktivnost()) {
 						System.out.println("Podaci koje ste uneli su ispravni ali korisnik nije aktivan u sistemu.");
 						aktivan = false;
-					}
-					else {
-						System.out.println("Uspesno ste se logovali kao " + DataBase.korisnici.get(key).getIme() + DataBase.korisnici.get(key).getPrezime() +".");
+					} else {
+						System.out.println("Uspesno ste se logovali kao " + DataBase.korisnici.get(key).getIme() + " "
+								+ DataBase.korisnici.get(key).getPrezime() + " sa ulogom "
+								+ DataBase.korisnici.get(key).getTipKorisnika() + "-a.");
 						temp = DataBase.korisnici.get(key);
 						tipKorisnika = DataBase.korisnici.get(key).getTipKorisnika();
-						
+
 						aktivan = false;
-						
+
 						return temp;
-					}				
+					}
 				}
-			}	
-			
-			if(aktivan) {
-				System.out.println("Korisnicko ime/Lozinka nisu dobri.");
 			}
-			else
-				continue;				
+
+			if (aktivan) {
+				System.out.println("Korisnicko ime/Lozinka nisu dobri.");
+			} else
+				continue;
 		}
-				
+
 	}
-	
-	
+
 }

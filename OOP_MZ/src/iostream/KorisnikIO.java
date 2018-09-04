@@ -109,7 +109,11 @@ public class KorisnikIO {
 	}
 	
 	
-
+	public static Korisnik vratiKorisnikaUsername(String licnaKarta) {
+		if(DataBase.korisnici.get(licnaKarta) == null)
+			return null;
+		return DataBase.korisnici.get(licnaKarta);
+	}
 	
 	public static void dodavanjeProdavca() {
 		Korisnik korisnik = new Korisnik();

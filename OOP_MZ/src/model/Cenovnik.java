@@ -46,4 +46,5 @@ public class Cenovnik {
 	public String toString() {
 		return idTipaSobe + "|" + cenaDnevniBoravak + "|" + cenaNocenje + "|" + vikendPoskupljenje;
 	}
+
 }

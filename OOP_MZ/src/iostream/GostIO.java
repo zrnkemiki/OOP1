@@ -16,6 +16,24 @@ public class GostIO {
 	static BufferedWriter bw;
 	static FileWriter fw;
 
+	
+	public static void stampajZaglavlje() {
+		System.out.println(
+				"\n=================================================================================================");
+		System.out.printf("%-2s%-16s%-2s%-16s%-2s%-14s%-2s%-16s%-2s\n", "|", "Ime", "|", "Prezime", "|", "BR LK", "|",
+				"Aktivan", "|");
+		System.out.println(
+				"=================================================================================================");
+
+	}
+	
+	public static void stampaj(Gost gost) {
+		System.out.printf("%-2s%-16.15s%-2s%-16.15s%-2s%-14.13s%-2s%-16.15s%-2s\n", "|", gost.getIme(), "|",
+				gost.getPrezime(), "|", gost.getBrojLK(), "|", gost.isAktivnost(), "|");
+		System.out.println(
+				"-------------------------------------------------------------------------------------------------");
+	}
+	
 	public static void ucitajGoste() {
 
 		String linija = "";
@@ -43,7 +61,7 @@ public class GostIO {
 					} catch (Exception e) {
 						continue;
 					}
-
+					//System.out.println(gost.getBrojLK());
 					DataBase.gosti.put(gost.getBrojLK(), gost);
 				}
 			} catch (IOException e) {
@@ -61,7 +79,8 @@ public class GostIO {
 
 	}
 	
-	public static void dodavanjeGost() {
+	// vraca brLicneKarte
+	public static String dodavanjeGost() {
 		Gost gost = new Gost();
 		
 		String ime = IOHandler.unosImena();
@@ -81,6 +100,7 @@ public class GostIO {
 	    	DataBase.gosti.put(gost.getBrojLK(), gost);
 	    	System.out.println("Gost dodat."); 									//OBRISATI
 	    }
+	    return gost.getBrojLK();
 	}
 	    
 	public static void azurirajGoste() {

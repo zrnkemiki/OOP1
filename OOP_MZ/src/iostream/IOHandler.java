@@ -21,6 +21,22 @@ public class IOHandler {
 
 		}
 	}
+	public static String ucitajLiniju()
+	{
+		while(true)
+		{
+			String line = input.nextLine();
+			if(line.equals(""))
+			{
+				continue;
+			}
+			else
+			{
+				return line;
+			}
+		}
+	}
+	
 
 	public static String unosImena() {		
 		System.out.println("Unesite ime: ");

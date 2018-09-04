@@ -1,7 +1,3 @@
-Marko|Suhanov|456456654|marko|marko|menadzer|true
-Petar|Petrovic|123123123|user|user|recepcioner|false
-m|m|123432214|ma|ma|menadzer|true
-Marko|Zrnic|123321657|maki|maki|menadzer|true
-Milanka|Zrnic|987654321|mima|mima|menadzer|true
-Mak|Suh|321123789|m|m|menadzer|true
-Milos|Zrnic|123456123|username|password|recepcioner|true
+Milos|Zrnic|123456789|user|user|recepcioner|true
+Marko|Markovic|111111111|marko|marko|menadzer|true
+Pera|Peric|987654321|pass|pass|recepcioner|false

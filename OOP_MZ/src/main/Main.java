@@ -7,6 +7,7 @@ import iostream.IznajmljivanjeIO;
 import iostream.KorisnikIO;
 import iostream.SobaIO;
 import iostream.TipSobeIO;
+import model.DataBase;
 import model.Korisnik;
 
 
@@ -34,13 +35,15 @@ public class Main {
 		//}
 		
 		
-		
+		for(String key : DataBase.iznajmljivanja.keySet()) {
+			System.out.println(DataBase.iznajmljivanja.get(key).toString());
+		}
 		
 		//korisnik = Meni.logovanje();
 		Meni.start();
-//		for(String key : DataBase.iznajmljivanja.keySet()) {
-//			System.out.println(DataBase.iznajmljivanja.get(key).toString());
-//		}
+		for(String key : DataBase.iznajmljivanja.keySet()) {
+			System.out.println(DataBase.iznajmljivanja.get(key).toString());
+		}
 		
 		//IznajmljivanjeIO.dodajIznajmljivanje();
 		//IznajmljivanjeIO.azurirajIznajmljivanja();

@@ -198,11 +198,17 @@ public class KorisnikIO {
 	public static void brisanjeKorisnika() {
 		while(true) {
 			String brLK = IOHandler.unosBrojLK();
+			Korisnik korisnik;
 			if(DataBase.korisnici.containsKey(brLK)) {
-				DataBase.korisnici.remove(brLK);
-				System.out.println("Korisnik sa brojem licne karte" + brLK + " je uklonjen");
-				break;
-							
+				korisnik = DataBase.korisnici.get(brLK);
+				if(DataBase.iznajmljivanja.containsKey(korisnik.getKorisnickoIme())) {
+					System.out.println("Korisnik sa brojem licne karte" + brLK + " poseduje iznajmljivanje.");
+				}
+				else {
+					DataBase.korisnici.remove(brLK);
+					System.out.println("Korisnik sa brojem licne karte" + brLK + " je uklonjen");
+					break;
+				}							
 			}
 			else
 			{

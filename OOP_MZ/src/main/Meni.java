@@ -33,6 +33,7 @@ public class Meni {
 			System.out.println("3) Izmena menadzera");
 			System.out.println("4) Brisanje menadzera");
 			System.out.println("0) Odjavljivanje.");
+			System.out.println("testetste");
 			input = izaberiMeniOpciju(5, true);
 			switch (input) {
 			case 1:
